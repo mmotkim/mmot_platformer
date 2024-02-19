@@ -1,0 +1,4 @@
+res://Player/Player.tscn
+res://scenes/Player/Player.tscn
+res://scenes/Player/PlayerIdle.gd
+res://scenes/Player/Sprite.gd
