@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://cvboky6pqlyk0"]
+[gd_scene load_steps=44 format=3 uid="uid://cvboky6pqlyk0"]
 
 [ext_resource type="Script" path="res://scenes/Player/Player.gd" id="1"]
 [ext_resource type="Script" path="res://scenes/Player/Sprite.gd" id="2"]
@@ -112,7 +112,6 @@ atlas = ExtResource("5_b81dv")
 region = Rect2(352, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bclho"]
-resource_local_to_scene = true
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -207,14 +206,12 @@ animations = [{
 }],
 "loop": true,
 "name": &"run",
-"speed": 5.0
+"speed": 15.0
 }]
 
-[sub_resource type="Animation" id="Animation_qclox"]
+[sub_resource type="Animation" id="Animation_6vqyk"]
 resource_name = "idle"
-length = 2.2
-loop_mode = 1
-step = 0.2
+length = 1.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -234,13 +231,22 @@ tracks/1/path = NodePath(".:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 }
 
-[sub_resource type="Animation" id="Animation_yu87x"]
+[sub_resource type="Animation" id="Animation_6u8lh"]
+resource_name = "run"
+
+[sub_resource type="Animation" id="Animation_ka4sr"]
+resource_name = "jump"
+
+[sub_resource type="Animation" id="Animation_wgvgb"]
+resource_name = "fall"
+
+[sub_resource type="Animation" id="Animation_vs7r6"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -267,111 +273,22 @@ tracks/1/keys = {
 "values": [0]
 }
 
-[sub_resource type="Animation" id="Animation_bglcp"]
-resource_name = "run"
-length = 1.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"run"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
-}
-
-[sub_resource type="Animation" id="Animation_rw2ro"]
-resource_name = "jump"
-length = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"jump"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_7csk0"]
-resource_name = "fall"
-length = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"fall"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_0dgdy"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1lb64"]
 _data = {
-"RESET": SubResource("Animation_yu87x"),
-"fall": SubResource("Animation_7csk0"),
-"idle": SubResource("Animation_qclox"),
-"jump": SubResource("Animation_rw2ro"),
-"run": SubResource("Animation_bglcp")
+"RESET": SubResource("Animation_vs7r6"),
+"fall": SubResource("Animation_wgvgb"),
+"idle": SubResource("Animation_6vqyk"),
+"jump": SubResource("Animation_ka4sr"),
+"run": SubResource("Animation_6u8lh")
 }
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5hlxr"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_isf1j"]
 animation = &"idle"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ryqeb"]
-animation = &"run"
-
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_xslcf"]
-states/Start/position = Vector2(160, 100)
-states/idle/node = SubResource("AnimationNodeAnimation_5hlxr")
-states/idle/position = Vector2(343, 88)
-states/run/node = SubResource("AnimationNodeAnimation_ryqeb")
-states/run/position = Vector2(515, 94)
+states/Start/position = Vector2(172, 100)
+states/idle/node = SubResource("AnimationNodeAnimation_isf1j")
+states/idle/position = Vector2(328, 101)
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 z_index = 10
@@ -419,7 +336,7 @@ animation = &"idle"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite/AnimatedSprite2D"]
 libraries = {
-"": SubResource("AnimationLibrary_0dgdy")
+"": SubResource("AnimationLibrary_1lb64")
 }
 
 [node name="State Machine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
@@ -432,8 +349,7 @@ script = ExtResource("8_eirpx")
 [node name="AnimationTree" type="AnimationTree" parent="."]
 root_node = NodePath("../Sprite/AnimatedSprite2D")
 libraries = {
-"": SubResource("AnimationLibrary_0dgdy")
+"": SubResource("AnimationLibrary_1lb64")
 }
 tree_root = SubResource("AnimationNodeStateMachine_xslcf")
-advance_expression_base_node = NodePath("../Sprite/AnimatedSprite2D")
 anim_player = NodePath("../Sprite/AnimatedSprite2D/AnimationPlayer")
