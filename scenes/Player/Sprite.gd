@@ -9,6 +9,8 @@ extends Node2D
 @onready var Player := get_node(player_path)
 @onready var Animator := $AnimatedSprite2D
 @onready var Anim := $AnimatedSprite2D/AnimationPlayer
+@onready var AnimTree := $AnimationTree
+@onready var state_machine = AnimTree.get("parameters/playback")
 
 var previous_frame_velocity := Vector2(0,0)
 
@@ -23,14 +25,14 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	#if previous_frame_velocity.y >= 0 and Player.velocity.y < 0: just jump
 	if Player.velocity.y < 0:
-		Anim.play("jump")
+		state_machine.travel("jump")
 	elif previous_frame_velocity.y < Player.velocity.y:
-		Anim.play("fall")
+		state_machine.travel("fall")
 	#elif previous_frame_velocity.y > 0 and Player.is_on_floor(): land
 	elif Player.is_on_floor() and Player.velocity.x == 0:
-		Anim.play("idle")
+		state_machine.travel("idle")
 	elif Player.velocity.x != 0:
-		Anim.play("run")
+		state_machine.travel("runTree")
 	#else:
 		#Animator.play("idle")
 	
