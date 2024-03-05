@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1708805137
+::res://::1708972125
 default_env.tres::::-1::1708333925::0::1::::<><>::
 export_presets.cfg::TextFile::-1::1708333925::0::1::::<><>::
 LICENSE.md::TextFile::-1::1708333925::0::1::::<><>::
@@ -234,11 +234,11 @@ CirclePlatform.tscn::PackedScene::5913173295404433914::1708333925::0::1::::<><>:
 MovingPlatform.gd::GDScript::-1::1708333925::0::1::::<>Node2D<>::
 MovingPlatform.tscn::PackedScene::8878840235884691719::1708333925::0::1::::<><>::res://scenes/Platforms/MovingPlatform.gd
 TileMap.tscn::PackedScene::8783139435087644240::1708333925::0::1::::<><>::uid://dxtx8htjdu1mh::::res://Art/TilesetOf5.png
-::res://scenes/Player/::1708350885
+::res://scenes/Player/::1708833275
 Player.gd::GDScript::-1::1708333925::0::1::::<>CharacterBody2D<>::
-Player.tscn::PackedScene::6249740666529434949::1708350885::0::1::::<><>::res://scenes/Player/Player.gd<>res://scenes/Player/Sprite.gd<>uid://7efqa3f6741t::::res://Assets/Images/Main Characters/Pink Man/Fall (32x32).png<>uid://bruiebkux4kqp::::res://Assets/Images/Main Characters/Pink Man/Idle (32x32).png<>uid://1ji1qtau8b6x::::res://Assets/Images/Main Characters/Pink Man/Jump (32x32).png<>uid://c6ces5a7bv6ry::::res://Assets/Images/Main Characters/Pink Man/Run (32x32).png<>res://scenes/Player/State Machine.gd<>res://scenes/Player/PlayerIdle.gd
+Player.tscn::PackedScene::6249740666529434949::1708833275::0::1::::<><>::res://scenes/Player/Player.gd<>res://scenes/Player/Sprite.gd<>uid://7efqa3f6741t::::res://Assets/Images/Main Characters/Pink Man/Fall (32x32).png<>uid://bruiebkux4kqp::::res://Assets/Images/Main Characters/Pink Man/Idle (32x32).png<>uid://1ji1qtau8b6x::::res://Assets/Images/Main Characters/Pink Man/Jump (32x32).png<>uid://c6ces5a7bv6ry::::res://Assets/Images/Main Characters/Pink Man/Run (32x32).png<>res://scenes/Player/State Machine.gd<>res://scenes/Player/PlayerIdle.gd
 PlayerIdle.gd::GDScript::-1::1708333925::0::1::::PlayerIdle<>State<>::
-Sprite.gd::GDScript::-1::1708341126::0::1::::<>Node2D<>::
+Sprite.gd::GDScript::-1::1708812456::0::1::::<>Node2D<>::
 State Machine.gd::GDScript::-1::1708333925::0::1::::<>Node<>::
 ::res://scenes/ScreenCamera/::1708333925
 ScreenCamera.gd::GDScript::-1::1708333925::0::1::::<>Camera2D<>::
